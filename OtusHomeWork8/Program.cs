@@ -99,13 +99,19 @@ namespace OtusHomeWork8
                 {
                     switch (collection)
                     {
-                        case ArrayList: Console.WriteLine("Элемент из ArrayList, который делится без остатка на 777: " + item); ; break;
-                        case List<int>: Console.WriteLine("Элемент из List, который делится без остатка на 777: " + item); ; break;
-                        case LinkedList<int>: Console.WriteLine("Элемент из LinkedList, который делится без остатка на 777: " + item); ; break;
+                        case ArrayList: Console.WriteLine("Элемент из ArrayList, который делится без остатка на 777: " + item); break;
+                        case List<int>: Console.WriteLine("Элемент из List, который делится без остатка на 777: " + item); break;
+                        case LinkedList<int>: Console.WriteLine("Элемент из LinkedList, который делится без остатка на 777: " + item); break;
                     }
                 }
             }
             stopwatch.Stop();
+            switch (collection)
+            {
+                case ArrayList: Console.WriteLine("Поиск элементов, которые делится на 777 без остатка в ArrayList: " + stopwatch.Elapsed.ToString()); break;
+                case List<int>: Console.WriteLine("Поиск элементов, которые делится на 777 без остатка в List: " + stopwatch.Elapsed.ToString()); break;
+                case LinkedList<int>: Console.WriteLine("Поиск элементов, которые делится на 777 без остатка в LinkedList: " + stopwatch.Elapsed.ToString()); break;
+            }
         }
     }
 }
