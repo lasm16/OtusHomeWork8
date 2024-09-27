@@ -90,46 +90,22 @@ namespace OtusHomeWork8
             Console.WriteLine("Поиск 496753 элемента в LinkedList: " + stopwatch.Elapsed.ToString() + $" Элемент = {element}");
         }
 
-        private static void DevideBy777(List<int> list)
+        private static void DevideBy777(ICollection collection)
         {
             stopwatch.Start();
-            foreach (var item in list)
-            {
-                if (item % 777 == 0)
-                {
-                    Console.WriteLine("Элемент из List, который делится без остатка на 777: " + item);
-                }
-            }
-            stopwatch.Stop();
-            Console.WriteLine("Поиск элементов, которые делится на 777 без остатка в List: " + stopwatch.Elapsed.ToString());
-        }
-
-        private static void DevideBy777(ArrayList arrayList)
-        {
-            stopwatch.Start();
-            foreach (var item in arrayList)
+            foreach (var item in collection)
             {
                 if ((int)item % 777 == 0)
                 {
-                    Console.WriteLine("Элемент из ArrayList, который делится без остатка на 777: " + item);
+                    switch (collection)
+                    {
+                        case ArrayList: Console.WriteLine("Элемент из ArrayList, который делится без остатка на 777: " + item); ; break;
+                        case List<int>: Console.WriteLine("Элемент из List, который делится без остатка на 777: " + item); ; break;
+                        case LinkedList<int>: Console.WriteLine("Элемент из LinkedList, который делится без остатка на 777: " + item); ; break;
+                    }
                 }
             }
             stopwatch.Stop();
-            Console.WriteLine("Поиск элементов, которые делится на 777 без остатка в ArrayList: " + stopwatch.Elapsed.ToString());
-        }
-
-        private static void DevideBy777(LinkedList<int> linkedList)
-        {
-            stopwatch.Start();
-            foreach (var item in linkedList)
-            {
-                if (item % 777 == 0)
-                {
-                    Console.WriteLine("Элемент из LinkedList, который делится без остатка на 777: " + item);
-                }
-            }
-            stopwatch.Stop();
-            Console.WriteLine("Поиск элементов, которые делится на 777 без остатка в LinkedList: " + stopwatch.Elapsed.ToString());
         }
     }
 }
